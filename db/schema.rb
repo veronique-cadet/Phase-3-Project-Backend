@@ -10,18 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_23_193252) do
+ActiveRecord::Schema.define(version: 2) do
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-  end
-
-  create_table "statuses", force: :cascade do |t|
-    t.integer "like_id"
+  create_table "matches", force: :cascade do |t|
+    t.boolean "matched?"
+    t.integer "liker_id"
+    t.integer "likee_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "location"
+    t.integer "age"
+    t.string "gender"
+    t.boolean "smoking"
+    t.boolean "drinking"
+    t.string "political"
+    t.string "gender_pref"
+    t.integer "age_min_pref"
+    t.integer "age_max_pref"
+    t.string "location_pref"
+    t.boolean "smoking_pref"
+    t.boolean "drinking_pref"
+    t.string "political_pref"
+    t.text "bio"
+    t.text "prompt_1"
+    t.text "prompt_2"
+    t.text "prompt_3"
   end
 
 end

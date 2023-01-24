@@ -19,6 +19,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
     t.text :prompt_1
     t.text :prompt_2
     t.text :prompt_3
+    t.string :meme 
+    t.string :profile_image
     end
   end
 end

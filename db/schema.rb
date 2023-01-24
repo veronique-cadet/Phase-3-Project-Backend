@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2) do
     t.text "prompt_1"
     t.text "prompt_2"
     t.text "prompt_3"
+    t.string "meme"
+    t.string "profile_image"
   end
 
 end

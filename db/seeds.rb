@@ -56,6 +56,12 @@ User.create(name: "Franklin", location: "NYC", age: 42, gender: "Male", smoking:
 User.create(name: "Alex", location: "NYC", age: 27, gender: "Female", smoking: false, drinking: true, political: "Liberal", gender_pref: "Both", age_min_pref: 25, age_max_pref: 35, location_pref: "NYC", smoking_pref: false, drinking_pref: true, political_pref: "Liberal", bio: "I am a buyer for Bloomingdales. I enjoy going to museums and concerts with good company.", prompt_1: "I am not looking for anything in particular, but with the right person, I could see myself settling down.", prompt_2: "I love trying new restaurants, and traveling to places and learning about history and culture.", prompt_3: "I play soccer. I have two brothers. I can do a split.", meme: "https://i.redd.it/hi8e7m7z9yda1.jpg", profile_image: "https://as1.ftcdn.net/v2/jpg/03/36/94/42/1000_F_336944276_tpWzmwFi6JfZln5VlfBC1BZu5jgDOAl8.jpg")
 
 
+Match.create(liker_id: 2, likee_id: 1)
+Match.create(liker_id: 3, likee_id: 1)
+Match.create(liker_id: 4, likee_id: 1)
+Match.create(liker_id: 5, likee_id: 1)
+
+
 
 
 puts "✅ Done seeding!"

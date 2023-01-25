@@ -10,4 +10,8 @@ class ApplicationController < Sinatra::Base
   User.first.to_json
   end
 
+  get "/users/potential" do
+    User.all.where(political: User.first.political_pref, drinking_pref: User.first.drinking, smoking_pref: User.first.smoking, age: 27..45, location: User.first.location_pref)
+  end
+  # "gender_pref = 'Female' or gender_pref  = 'All'"
 end

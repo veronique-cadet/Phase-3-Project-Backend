@@ -10,6 +10,12 @@ class ApplicationController < Sinatra::Base
   User.first.to_json
   end
 
+  post "/newmatch" do 
+    newMatch = Match.create(matched?:params[:matched?], liker_id:params[:liker_id], likee_id:params[:likee_id])
+    newMatch.to_json
+
+  end 
+
   get "/users/potential" do
     User.all.where(political: User.first.political_pref, drinking_pref: User.first.drinking, smoking_pref: User.first.smoking, age: 27..45, location: User.first.location_pref)
   end

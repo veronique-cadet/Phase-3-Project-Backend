@@ -6,4 +6,8 @@ class ApplicationController < Sinatra::Base
   User.all.to_json
   end
 
+  get "/users/1" do
+  User.first.to_json
+  end
+
 end

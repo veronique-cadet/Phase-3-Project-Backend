@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/newmatch" do 
-    newMatch = Match.create(matched?:params[:matched?], liker_id:params[:liker_id], likee_id:params[:likee_id])
+    newMatch = Match.create(match_status:params[:match_status], liker_id:params[:liker_id], likee_id:params[:likee_id])
     newMatch.to_json
 
   end 
@@ -48,4 +48,8 @@ class ApplicationController < Sinatra::Base
     message.to_json
   end
   
+  get "/confirmedmatches" do
+    Match.all.where(match_status: 1).to_json
+  end
+
 end

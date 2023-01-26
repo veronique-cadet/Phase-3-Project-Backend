@@ -67,7 +67,22 @@ class ApplicationController < Sinatra::Base
         prompt_2:params[:prompt_2],
         prompt_3:params[:prompt_3],
         meme:params[:meme],
-        profile_image:params[:profile_image])
+        profile_image:params[:profile_image],
+        # gender_pref:params[:gender_pref]
+        )
+        updateUser.to_json
+      end
+      
+      patch "/pref/:id" do
+        User.first.to_json
+        updateUser = User.find(params[:id])
+        updateUser.update(
+      gender_pref:params[:gender_pref],age_min_pref: params[:age_min_pref], age_max_pref: params[:age_max_pref],
+        location_pref: params[:locationPref],
+        smoking_pref: params[:smokerPref],
+        drinking_pref: params[:drinkerPref],
+        political_pref: params[:politicalPref],
+      )
     updateUser.to_json
   end
 

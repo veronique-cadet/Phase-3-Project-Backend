@@ -5,7 +5,7 @@ puts "🌱 Seeding spices..."
 # Prompt 3 - Two truths and a lie? 
 
 
-User.create(name: "Victoria", location: "NYC", age: 31, gender: "Female", smoking: true, drinking: true, political: "Liberal", gender_pref: "All", age_min_pref: 27, age_max_pref: 45, location_pref: "NYC", smoking_pref: true, drinking_pref: true, political_pref: "Liberal", bio: "I am a musician from nyc looking for love in the big city", prompt_1: "I am looking for a long term relatioship with someone who wants to love me for who I am on the inside.", prompt_2: "In my freetime you can find me traveling the world and eating amazing food. I love an adventure.", prompt_3:"I am the queen of Wakanda. I have three siblings. I've been to the grammys", meme: "https://brobible.com/wp-content/uploads/2021/07/best-50-memes-billionaires-other-planets.png", profile_image: "https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&w=800" )
+User.create(name: "Victoria", location: "NYC", age: 31, gender: "Female", smoking: true, drinking: true, political: "Liberal", gender_pref: "All", age_min_pref: 27, age_max_pref: 45, location_pref: "NYC", smoking_pref: true, drinking_pref: true, political_pref: "Liberal", bio: "I am a musician from nyc looking for love in the big city", prompt_1: "I am looking for a long term relatioship with someone who wants to love me for who I am on the inside.", prompt_2: "In my freetime you can find me traveling the world and eating amazing food. I love an adventure.", prompt_3:"I am the queen of Wakanda. I have three siblings. I've been to the grammys", meme: "https://brobible.com/wp-content/uploads/2021/07/best-50-memes-billionaires-other-planets.png", profile_image: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" )
 
 User.create(name: "Danielle", location: "NYC", age: 28, gender: "Female", smoking: false, drinking: true, political: "Liberal", gender_pref: "Both", age_min_pref: 25, age_max_pref: 80, location_pref: "NYC", smoking_pref: true, drinking_pref: true, political_pref: "Liberal", bio: "I am Danielle, a fashion designer from NYC who is looking for a wealthy partner to share my life and career with. I value luxury, style and class, and I am looking for someone who can provide financial security and stability while supporting my passions and ambitions.", prompt_1: "I am looking for a rich man or woman who wants to pay for my life.", prompt_2: "I love spending my partner's money.", prompt_3:"I love money. Money loves me. I love being broke", meme: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2022-10-28-at-15-33-47-1666967806.png", profile_image: "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&w=800")
 
@@ -62,6 +62,32 @@ Match.create(liker_id: 4, likee_id: 1)
 Match.create(liker_id: 5, likee_id: 1)
 
 
+puts "🌱 Seeding messages..."
+
+Message.create([
+  {
+    body: "Hello 👋",
+    username: "Liza"
+  },
+  {
+    body: "Hi!",
+    username: "Duane"
+  },
+  {
+    body: "let's get this chat app working",
+    username: "Liza"
+  },
+  {
+    body: "ngl, this looks like a lot 😬",
+    username: "Duane"
+  },
+  {
+    body: "You got this! 💪",
+    username: "Liza"
+  }
+])
+
+puts "✅ Done seeding!"
 
 
 puts "✅ Done seeding!"

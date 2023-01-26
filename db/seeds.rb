@@ -62,6 +62,32 @@ Match.create(liker_id: 4, likee_id: 1)
 Match.create(liker_id: 5, likee_id: 1)
 
 
+puts "🌱 Seeding messages..."
+
+Message.create([
+  {
+    body: "Hello 👋",
+    username: "Liza"
+  },
+  {
+    body: "Hi!",
+    username: "Duane"
+  },
+  {
+    body: "let's get this chat app working",
+    username: "Liza"
+  },
+  {
+    body: "ngl, this looks like a lot 😬",
+    username: "Duane"
+  },
+  {
+    body: "You got this! 💪",
+    username: "Liza"
+  }
+])
+
+puts "✅ Done seeding!"
 
 
 puts "✅ Done seeding!"

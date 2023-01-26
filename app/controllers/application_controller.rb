@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
   User.first.to_json
   end
 
+  get "/matches" do
+  Matches.
+    User.all.where()
+  end
+
   post "/newmatch" do 
     newMatch = Match.create(match_status:params[:match_status], liker_id:params[:liker_id], likee_id:params[:likee_id])
     newMatch.to_json
@@ -21,6 +26,28 @@ class ApplicationController < Sinatra::Base
   end
   # "gender_pref = 'Female' or gender_pref  = 'All'"
 
+   get "/messages" do
+    messages = Message.all.order(:created_at)
+    messages.to_json
+  end
+  
+  post "/messages" do
+    message = Message.create(body: params[:body], username: params[:username])
+    message.to_json
+  end
+  
+  patch "/messages/:id" do
+    message = Message.find(params[:id])
+    message.update(body: params[:body])
+    message.to_json
+  end
+  
+  delete "/messages/:id" do
+    message = Message.find(params[:id])
+    message.destroy
+    message.to_json
+  end
+  
   get "/confirmedmatches" do
     Match.all.where(match_status: 1).to_json
   end

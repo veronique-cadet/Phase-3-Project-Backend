@@ -54,11 +54,22 @@ class ApplicationController < Sinatra::Base
     match_profiles.to_json
   end
 
- get "/user/:id" do
-  user = User.find(params[:id])
-  user.update(body: params[:body])
-  user.to_json
- end
+   patch "/users/:id" do
+    updateUser = User.find(params[:id])
+    updateUser.update(
+    location:params[:location], age:params[:age],
+    gender:params[:gender],
+        smoking:params[:smoker],
+        drinking:params[:drinking],
+        political:params[:political],
+        bio:params[:bio],
+        prompt_1:params[:prompt_1],
+        prompt_2:params[:prompt_2],
+        prompt_3:params[:prompt_3],
+        meme:params[:meme],
+        profile_image:params[:profile_image])
+    updateUser.to_json
+  end
 
 end
 

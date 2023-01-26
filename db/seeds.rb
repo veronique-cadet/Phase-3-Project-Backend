@@ -67,23 +67,19 @@ puts "🌱 Seeding messages..."
 Message.create([
   {
     body: "Hello 👋",
-    username: "Liza"
+    username: "Victoria"
   },
   {
     body: "Hi!",
     username: "Duane"
   },
   {
-    body: "let's get this chat app working",
-    username: "Liza"
+    body: "Nice to meet you blah blah",
+    username: "Victoria"
   },
   {
-    body: "ngl, this looks like a lot 😬",
+    body: "Nice to meet you too!",
     username: "Duane"
-  },
-  {
-    body: "You got this! 💪",
-    username: "Liza"
   }
 ])
 

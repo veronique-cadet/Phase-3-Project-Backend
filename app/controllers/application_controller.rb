@@ -52,4 +52,21 @@ class ApplicationController < Sinatra::Base
     Match.all.where(match_status: 1).to_json
   end
 
+   patch "/users/:id" do
+    updateUser = User.find(params[:id])
+    updateUser.update(
+    location:params[:location], age:params[:age],
+    gender:params[:gender],
+        smoking:params[:smoker],
+        drinking:params[:drinking],
+        political:params[:political],
+        bio:params[:bio],
+        prompt_1:params[:prompt_1],
+        prompt_2:params[:prompt_2],
+        prompt_3:params[:prompt_3],
+        meme:params[:meme],
+        profile_image:params[:profile_image])
+    updateUser.to_json
+  end
+
 end

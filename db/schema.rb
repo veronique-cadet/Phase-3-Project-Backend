@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2) do
 
   create_table "matches", force: :cascade do |t|
-    t.boolean "matched?"
+    t.boolean "match_status"
     t.integer "liker_id"
     t.integer "likee_id"
     t.datetime "created_at", precision: 6, null: false

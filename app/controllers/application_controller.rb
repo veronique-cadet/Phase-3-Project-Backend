@@ -21,3 +21,4 @@ class ApplicationController < Sinatra::Base
   end
   # "gender_pref = 'Female' or gender_pref  = 'All'"
 end
+

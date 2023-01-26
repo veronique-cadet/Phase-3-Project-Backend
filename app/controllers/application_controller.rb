@@ -49,7 +49,9 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/confirmedmatches" do
-    Match.all.where(match_status: 1).to_json
+    matches = Match.all.where(match_status: 1)
+    match_profiles = matches.map { |matches| matches.likee}
+    match_profiles.to_json
   end
 
    patch "/users/:id" do
@@ -70,3 +72,4 @@ class ApplicationController < Sinatra::Base
   end
 
 end
+

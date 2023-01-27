@@ -50,6 +50,7 @@ class ApplicationController < Sinatra::Base
   get "/confirmedmatches" do
     matches = Match.all.where(match_status: 1)
     match_profiles = matches.map { |matches| matches.likee}
+    # match_profiles.distinct 
     match_profiles.to_json
   end
 
@@ -85,21 +86,14 @@ class ApplicationController < Sinatra::Base
     updateUser.to_json
   end
 
-  # delete "/delete/:id" do 
-  #   match = Match.all.where(liker_id: 1, id:params[:likee_id])
-  # #  match = Match.first
-
-  #   match.destroy 
-  #   match.to_json
-
-  # end 
-
-  delete "/confirmedmatches/:id" do 
-    match = Match.all.where(match_status: 1)
-    delete_match = matches.where(likee_id:params[:id]).destroy
-    delete_match.to_json
+  get "/delete" do 
+    Match.all.to_json
   end 
 
+  delete "/delete/:id" do 
+    delete_match = Match.all.find_by(likee_id:params[:id])
+    delete_match.destroy
+  end 
 
 
 end

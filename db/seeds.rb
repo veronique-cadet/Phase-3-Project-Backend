@@ -67,7 +67,7 @@ puts "🌱 Seeding messages..."
 
 Message.create([
   {
-    body: "Hello ",
+    body: "Are you from Tennessee? Because you are the only 10 I see",
     username: "Victoria"
   },
   

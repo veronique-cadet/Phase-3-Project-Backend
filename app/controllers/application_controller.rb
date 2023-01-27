@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/users/potential" do
-    User.all.where(gender_pref: "Female").or(User.all.where(gender_pref:"All")).and(User.all.where( political: User.first.political_pref, drinking_pref: User.first.drinking, smoking_pref: User.first.smoking, age: 27..45, location: User.first.location_pref)).to_json
+    User.all.where(gender_pref: "Female").or(User.all.where(gender_pref:"All")).and(User.all.where( political: User.first.political_pref, drinking_pref: User.first.drinking, smoking_pref: User.first.smoking, age: 27..45, location: User.first.location_pref)).sort_by{rand}.to_json
   end
 
    get "/messages" do

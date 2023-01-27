@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
     updateUser.update(
     location:params[:location], age:params[:age],
     gender:params[:gender],
-        smoking:params[:smoker],
+        smoking:params[:smoking],
         drinking:params[:drinking],
         political:params[:political],
         bio:params[:bio],
@@ -78,10 +78,10 @@ class ApplicationController < Sinatra::Base
         updateUser = User.find(params[:id])
         updateUser.update(
       gender_pref:params[:gender_pref],age_min_pref: params[:age_min_pref], age_max_pref:params[:age_max_pref],
-        location_pref:params[:locationPref],
-        smoking_pref:params[:smokerPref],
-        drinking_pref:params[:drinkerPref],
-        political_pref:params[:politicalPref],
+        location_pref:params[:location_pref],
+        smoking_pref:params[:smoking_pref],
+        drinking_pref:params[:drinking_pref],
+        political_pref:params[:political_pref],
       )
     updateUser.to_json
   end

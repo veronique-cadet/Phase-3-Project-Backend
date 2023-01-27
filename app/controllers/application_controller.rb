@@ -66,9 +66,41 @@ class ApplicationController < Sinatra::Base
         prompt_2:params[:prompt_2],
         prompt_3:params[:prompt_3],
         meme:params[:meme],
-        profile_image:params[:profile_image])
+        profile_image:params[:profile_image],
+        # gender_pref:params[:gender_pref]
+        )
+        updateUser.to_json
+      end
+      
+      patch "/pref/:id" do
+        User.first.to_json
+        updateUser = User.find(params[:id])
+        updateUser.update(
+      gender_pref:params[:gender_pref],age_min_pref: params[:age_min_pref], age_max_pref:params[:age_max_pref],
+        location_pref:params[:locationPref],
+        smoking_pref:params[:smokerPref],
+        drinking_pref:params[:drinkerPref],
+        political_pref:params[:politicalPref],
+      )
     updateUser.to_json
   end
+
+  # delete "/delete/:id" do 
+  #   match = Match.all.where(liker_id: 1, id:params[:likee_id])
+  # #  match = Match.first
+
+  #   match.destroy 
+  #   match.to_json
+
+  # end 
+
+  delete "/confirmedmatches/:id" do 
+    match = Match.all.where(match_status: 1)
+    delete_match = matches.where(likee_id:params[:id]).destroy
+    delete_match.to_json
+  end 
+
+
 
 end
 
